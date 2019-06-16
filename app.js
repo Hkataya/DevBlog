@@ -21,7 +21,8 @@ app.locals.moment = require("moment");
 //connecting to mongodb server
 
 //mongoose.connect("mongodb://localhost:27017/devBlog", { useNewUrlParser: true });
-mongoose.connect("mongodb+srv://hasan:kataya@devblog-kcphx.mongodb.net/test?retryWrites=true&w=majority",{ useNewUrlParser: true } );
+
+mongoose.connect("mongodb+srv://hasan:kataya@devblog-kcphx.mongodb.net/test?retryWrites=true&w=majority");
 
 //setting view engine to ejs
 
@@ -266,7 +267,7 @@ res.redirect("/admin");
 
 
 
-app.listen(process.env.PORT,process.env.IP,  function(){
+app.listen(process.env.PORT || 3000,  function(){
     
     console.log("server has started");
     
