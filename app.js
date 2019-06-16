@@ -20,7 +20,8 @@ app.locals.moment = require("moment");
 
 //connecting to mongodb server
 
-mongoose.connect("mongodb://localhost:27017/devBlog", { useNewUrlParser: true });
+//mongoose.connect("mongodb://localhost:27017/devBlog", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://hasan:kataya@devblog-kcphx.mongodb.net/test?retryWrites=true&w=majority",{ useNewUrlParser: true } );
 
 //setting view engine to ejs
 
@@ -63,7 +64,7 @@ var blogSchema = new mongoose.Schema({
 var devblog = mongoose.model("devBlog", blogSchema);
 
 /*
-User.register(new User({username:"admin"}), "admin", function(err, user){
+User.register(new User({username:"admin"}), "TqUC4jas", function(err, user){
    if(err)
        console.log(err);
     else
@@ -71,8 +72,8 @@ User.register(new User({username:"admin"}), "admin", function(err, user){
     
     
 });
-
 */
+
 
 
 
