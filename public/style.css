@@ -1,0 +1,398 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+ 
+  font-family: 'lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex-direction: column;
+     background: #f8f8f8;
+
+    font-size: 16px;
+
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+
+.logo{
+
+margin-top: 5px;
+font-size: 45px;
+    
+}
+
+
+.nav-wrapper{
+
+
+    background-image: linear-gradient(to left, #7474BF, #348AC7);
+    
+
+}
+
+.header-text{
+
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 50px;
+    text-align: center;
+    width: 40%;
+    border-bottom-style: solid;
+    border-image: linear-gradient(to right, #348AC7,#7474BF,#EB3349, #F45C43);
+  border-image-slice: 1;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 5px;
+}
+
+.header-text h1{
+
+font-size: 200%;
+    font-weight: 200;
+    
+}
+
+/*===== Vertical Timeline =====*/
+#conference-timeline {
+    
+    margin-top: 40px;
+  position: relative;
+  width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+#conference-timeline .timeline-start,
+#conference-timeline .timeline-end {
+  background: #F45C43;
+  width: 20px;
+  height: 20px;
+  border-radius: 180px;
+ 
+  margin-left:40px; 
+    
+}
+
+#conference-timeline .conference-center-line {
+    
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+  margin-left: 0;
+  left: 50px;
+    background-image: linear-gradient(to bottom, #348AC7,#7474BF,#EB3349, #F45C43);
+}
+
+#conference-timeline .conference-timeline-content {
+  padding-top: 67px;
+  padding-bottom: 67px;
+}
+
+.timeline-article {
+  width: 95%;
+  position: relative;
+  overflow: hidden;
+  margin: 20px 0 50px;
+}
+
+.timeline-article .content-right-container {
+  max-width: 44%;
+  width: 100%;
+}
+.timeline-article .timeline-author {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #242424;
+  text-align: right;
+}
+
+.timeline-article .content-right {
+    
+  position: relative;
+  width: auto;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 5px 3px rgba(0,0,0,.2);
+  padding: 10px 25px; 
+  min-height: 100px;
+  font-size:10px;
+    overflow: hidden;
+
+
+    
+}
+
+.content-right a{
+
+    text-decoration: none;
+    color: #348AC7;
+}
+
+.content-right h3{
+    
+    font-size: 250%;
+    font-weight: 600;
+    
+}
+
+.timeline-article p {
+  margin: 0 0 0 0px;
+  padding: 0;
+  font-weight: 400;
+  color: #242424;
+  font-size: 14px;
+  line-height: 24px;
+  position: relative;
+    overflow: hidden;
+    max-height: 190px;
+    margin-top: 10%;
+}
+
+.timeline-article .content-right-container {
+
+     max-width: 100%;
+    width: auto;
+    float: none;
+    margin-left: 110px;
+    min-height: 53px;
+}
+
+.inner-content{
+
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding-bottom: 60px;
+    
+}
+
+.inner-content p{
+    
+    font-size: 150%;
+    overflow: hidden;
+    margin-right: 20px;
+   
+    
+}
+
+.inner-image{
+    
+    margin-top: 30px;
+    
+
+}
+
+ #conference-timeline img{
+    
+    width: 350px;
+    height: 220px;
+    
+   
+}
+
+
+.timeline-article .meta-date {
+  position: absolute;
+  top: 0;
+  width: 62px;
+  height: 62px;
+  color: #fff;
+  border-radius: 100%;
+  background-image: linear-gradient(to bottom, #F45C43, #EB3349);
+    margin-left: 0;
+    left: 20px;
+}
+
+.timeline-article .meta-date .date,
+.timeline-article .meta-date .month {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+}
+.timeline-article .meta-date .date {
+  font-size: 30px;
+  line-height: 40px;
+}
+.timeline-article .meta-date .month {
+  font-size: 18px;
+  line-height: 10px;
+}
+
+
+.page-footer {
+
+    margin-top: 70px;
+    background-image: linear-gradient(to top, #7474BF, #348AC7);
+    
+
+}
+
+.logo-footer{
+
+font-size: 30px;
+    
+}
+
+.page-footer li{
+
+    display: inline;
+    margin-right: 10px;
+}
+
+
+@media only screen and (max-width: 1100px) {
+  
+    #conference-timeline .conference-center-line {
+    
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+  left: 50%; 
+  background-image: linear-gradient(to bottom, #348AC7,#7474BF,#EB3349, #F45C43);
+        
+}
+    
+    .timeline-article .meta-date {
+
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        
+}
+
+    #conference-timeline .timeline-start,
+#conference-timeline .timeline-end {
+
+  position: relative;
+margin-left: auto;
+margin-right: auto;
+    
+}
+
+.timeline-article {
+  width: 100%;
+  height: 100%;
+ 
+}
+    
+    .timeline-article .content-right-container{
+
+        text-align: center;
+        margin-left: 0px;
+    
+    }
+
+    .inner-content{
+    text-align: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+   
+    
+}
+    
+    .inner-image{
+    
+    margin-top: 10px;
+    
+
+}
+
+    
+    
+     #conference-timeline img{
+    
+    width: 350px;
+    height: 220px;
+     border-style: none;
+   
+}
+    
+}
+
+
+@media only screen and (max-width: 600px) {
+    
+    .header-text{
+
+        border-bottom-style: none;
+    width: 90%;
+    border-left-style: solid;
+    border-image: linear-gradient(to bottom, #348AC7,#7474BF,#EB3349, #F45C43);
+  border-image-slice: 1;
+
+}
+
+
+    .header-text h1{
+
+font-size: 180%;
+    font-weight: 200;
+    
+}
+    
+    #conference-timeline {
+        
+        width: 85%;
+    }
+    
+        #conference-timeline img{
+        
+    width: 100%;
+    height: 220px;
+  
+   
+}
+    
+    
+
+    
+    
+.timeline-article .content-right {
+    
+
+  box-shadow: 0 4px 3px rgba(0,0,0,.03);
+  padding: 0px 0px; 
+ 
+
+    
+}
+    
+    .timeline-article p {
+  margin: 0 0 0 0px;
+  padding: 0;
+  font-weight: 400;
+  color: #242424;
+  font-size: 14px;
+  line-height: 24px;
+  position: relative;
+}
+    
+    .inner-image{
+    
+    margin-top: 0px;
+    
+
+}
+
+    
+    
+}
+
+
+

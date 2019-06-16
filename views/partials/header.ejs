@@ -1,0 +1,40 @@
+
+
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Esteban|Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="/./style.css" />
+  <div class="navbar-fixed">    
+ <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><ion-icon class="logo"  name="code"></ion-icon></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><ion-icon class="logo" name="menu"></ion-icon></a>
+      <ul class="right hide-on-med-and-down">
+       <li><a href="/blog">Blog</a></li>
+        <li><a href="/#About">About Me</a></li>
+        <li><a href="/#Projects">Projects</a></li>
+        <li><a href="/#Contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>  
+  </div>
+    <ul class="sidenav" id="mobile-demo">
+<li><a href="/blog">Blog</a></li>
+        <li><a href="/#About">About Me</a></li>
+        <li><a href="/#Projects">Projects</a></li>
+        <li><a href="/#Contact">Contact</a></li>
+  </ul>
+<script>
+    AOS.init();
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  });
+</script>
+

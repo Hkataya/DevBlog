@@ -1,0 +1,71 @@
+
+<link rel="stylesheet" type="text/css" href="/login.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jodit/3.1.92/jodit.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jodit/3.1.92/jodit.min.js"></script>
+ 
+
+<div class="entry_header">
+
+    <h1> Add/Edit an Entry </h1>
+    
+    
+</div>
+
+
+
+<div class="entry_body" >
+
+<% var val1 = "" %>
+<% var val2 = "" %>
+<% var val3 = "" %>
+    
+<% var route = "/admin/dashboard" %>
+
+
+<% if(Object.keys(blog).length != 0){ %>
+    
+    <% val1 = blog.title %>
+    <% val2 = blog.desc %>
+    <% val3 = blog.summary %>
+<% route = "/admin/dashboard/article/"+blog._id+""%>
+  
+    <%}%>
+ <form id="form" method="post" action="<%=route%>"> 
+    
+<h3>Blog Title</h3>     
+<input type ="text" class="entry_title" name="title" placeholder="blog title"  value="<%=val1%>"  />
+     
+<textarea id="mytextarea" class="entry_content"  name="desc" placeholder ="blog description"  > <%=val2%></textarea>
+<button class="btn" type="button" id="summary_btn" > Generate Summary </button>
+<textarea id="entry_summary" name="summary" > <%= val3 %> </textarea>
+     <input type="file" id="upload_image" class="btn" name="file" />
+<button class="btn" type="submit">Submit</button>
+
+
+</form>
+
+</div>
+
+<script>
+
+    
+
+        var editor = new Jodit('#mytextarea');
+    
+
+    document.getElementById("summary_btn").onclick = function(){
+        
+       var str = "";
+       for(var i=0; i<500; i++)
+         str +=document.getElementById("mytextarea").value[i];
+        
+        document.getElementById("entry_summary").innerHTML = str;
+        
+
+        
+    }   
+       
+
+ </script>
+
+

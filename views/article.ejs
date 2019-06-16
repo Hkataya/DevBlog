@@ -1,0 +1,37 @@
+
+<%include ./partials/header.ejs %>
+
+<link rel="stylesheet" href="/./article.css" />
+</head>
+
+<body>
+    
+
+<div data-aos="zoom-out"  class="entry_wrapper">
+<div  class="entry_image" style="background: linear-gradient(rgba(20,20,20, .5),rgba(20,20,20, .5)),url(/./images/<%= user.image %>)  center no-repeat ">
+   
+     <h1 ><%= user.title %></h1>
+   
+    </div>
+    <div class="author_info">
+        <p> Date created: <%=moment(user.created).format("MMM DD YYYY") %>   </p>
+     </div>
+     <article>
+    
+      <div class="entry_body">
+
+
+
+<p><%- user.desc %></p>
+    
+    </div>
+    </article>
+  
+
+
+</div>
+
+
+    
+    
+<%include ./partials/footer.ejs %>

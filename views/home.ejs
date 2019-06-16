@@ -1,0 +1,56 @@
+<%include ./partials/header.ejs %>
+
+</head>
+
+<body>
+<div class="header-text"> 
+    
+    <h1>A blog about technology, software, and anything really. </h1>
+
+    
+</div>
+
+ <section id="conference-timeline">
+    <div class="timeline-start"></div>
+    <div class="conference-center-line"></div>
+    <div class="conference-timeline-content">
+    
+    <% blog.forEach(function(entry){ %>
+
+     
+       <div class="timeline-article">
+        <div class="content-right-container">
+          <div class="content-right" data-aos="fade-right">
+              <div class="inner-content">
+                  <div>
+                       <a href="blog/article/<%= entry._id %>" > <h3><%= entry.title %></h3> </a>   
+                      <p> <%-entry.summary %></p> 
+                  </div>
+             <div class="inner-image">
+          <img src="./images/<%=entry.image%>" />
+                  </div>
+              </div>
+          </div>
+          <span class="timeline-author"></span>
+        </div>
+        <div class="meta-date"data-aos="zoom-in-up">
+          
+          <span class="date"><%=moment(entry.created).format("DD") %>  </span>
+          <span class="month"><%=moment(entry.created).format("MMM") %>  </span>
+            
+        </div>
+      </div>
+
+
+    
+<% });%>
+    
+     </div>
+</section>
+
+
+
+
+
+
+<%include ./partials/footer.ejs %>

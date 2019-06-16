@@ -1,0 +1,83 @@
+
+
+.entry_wrapper{
+
+
+    
+}
+
+.entry_image{
+    
+margin-top: -45px;
+height: 53vh;
+
+}
+
+
+.author_info p{
+    margin-top: 0px;
+    font-size:110%;
+    margin-bottom: 7%;
+    background-image: linear-gradient(to right, #348AC7,#7474BF,#EB3349, #F45C43);
+    color: white;
+}
+
+
+.entry_body{
+
+
+    width:900px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f9fafb;
+    
+}
+
+
+.entry_image h1{
+
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: 600;
+   font-size: 300%;
+    padding-top: 20vh;
+    color:whitesmoke;
+}
+
+
+.entry_body p{
+    
+    font-size: 120%;
+    letter-spacing: normal;
+    line-height: 2;
+  
+    
+}
+
+
+@media only screen and (max-width: 900px) {
+    
+
+    .entry_body{
+
+        width:90%;
+
+    
+}
+
+    
+    .entry_image h1{
+
+    font-size: 250%;
+
+}
+
+    
+    
+    
+    
+}
+
+
+
+

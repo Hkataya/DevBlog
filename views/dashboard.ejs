@@ -1,0 +1,36 @@
+<link rel="stylesheet" type="text/css" href="/login.css" />        
+
+
+<div class="dash-header">
+
+<h1> Dashboard </h1>
+<a href="/admin/dashboard/new" ><button class="new_post" >+</button> </a>
+</div>
+
+<div class="entry_list">
+
+
+    <% blog.forEach(function(x){ %>
+    
+    <div class="entry">
+        <div class="upper_part">
+        <h1 ><center> <a href="/admin/dashboard/article/<%=x._id%>" > <%= x.title %> </a> </center> </h1>
+    
+<div >   <%- x.desc %>   </div>
+
+        </div>
+
+        
+<a href="/admin/dashboard/edit/<%=x._id %>" > <button  class="btn"> Edit</button> </a>
+<a href="/admin/dashboard/delete/<%=x._id %>" ><button class="btn" >Delete</button> </a>
+
+
+</div>
+    
+     
+    
+<% }); %>
+
+</div>
+
+
