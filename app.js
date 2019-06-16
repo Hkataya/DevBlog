@@ -22,7 +22,7 @@ app.locals.moment = require("moment");
 
 //mongoose.connect("mongodb://localhost:27017/devBlog", { useNewUrlParser: true });
 
-mongoose.connect("mongodb+srv://hasan:kataya@devblog-kcphx.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://hasan:kataya@devblog-kcphx.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
 
 //setting view engine to ejs
 
