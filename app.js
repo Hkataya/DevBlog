@@ -30,7 +30,9 @@ app.set("view engine", "ejs");
 
 //searching for stylesheets in the public folder
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
+
+
 
 //initialize body Parser
 
@@ -168,7 +170,7 @@ app.get("/admin/dashboard", function(req, res){
 
 app.post("/admin/dashboard", function(req, res){
     
-    console.log(req.body.title);
+   
     
      devblog.create({
         title:req.body.title,summary:req.body.summary,  desc:req.body.desc, image:req.body.file
@@ -240,7 +242,7 @@ app.get("/admin/dashboard/article/:id", function(req, res){
 
     app.post("/admin/dashboard/article/:id", function(req, res){
         
-    devblog.findByIdAndUpdate(req.params.id, {title:req.body.title, desc:req.body.desc, summary:req.body.summary}, function(err,newBlog){
+    devblog.findByIdAndUpdate(req.params.id, {title:req.body.title, desc:req.body.desc, summary:req.body.summary, image:req.body.file}, function(err,newBlog){
       if(err)
           console.log(err);
         else

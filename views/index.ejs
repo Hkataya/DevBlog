@@ -1,11 +1,14 @@
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Esteban|Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link rel="stylesheet" href="/./index.css" />
+      <link rel="stylesheet" href="/./index.css" />
 </head>
 
 
@@ -14,7 +17,7 @@
    <div class="hamburger-menu">
   <nav class="transparent">
     <div class="nav-wrapper">
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"> <ion-icon style="font-size:55px" name="menu"></ion-icon></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"> <ion-icon style="font-size:45px" name="menu"></ion-icon></a>
     </div>
   </nav>
   <ul class="sidenav" id="mobile-demo">
@@ -61,7 +64,7 @@
     
     </div>    
     
-    <div class="hero-text">
+    <div class="hero-text" id="hero-text" >
     <h1 style="font-weight:900" >WEB <br> DEVELOPER</h1>
   </div>
     
@@ -132,7 +135,7 @@ web technologies to provide the best value to meet your needs.
           <div>
                <ion-icon class="service-icon"  name="code"></ion-icon>
           <h4 class="service-title">Web Technologies </h4>
-        <div class="chip"> HTML </div> <div class="chip"> CSS </div> <div class="chip"> Javascript </div> <div class="chip"> jQuery  </div> <div class="chip"> MongoDB </div> <div class="chip"> Express.js </div>  <div class="chip"> Reacct.js  </div> <div class="chip"> NPM </div> 
+        <div class="chip"> HTML </div> <div class="chip"> CSS </div> <div class="chip"> Javascript </div> <div class="chip"> jQuery  </div> <div class="chip"> MongoDB </div> <div class="chip"> Express.js </div>  <div class="chip"> React.js  </div> <div class="chip"> Node.js </div> 
       </div>
           
               <div>
@@ -163,7 +166,7 @@ web technologies to provide the best value to meet your needs.
      <h4 class="education-title"> Computer Science Student | Lebanese University </h4>
           <p> 2017 - 2020 </p>
                <h4 class="education-title"> High School Degree | Beirut Modern School </h4>
-          <p> 2018 </p>
+          <p> 2017 </p>
 
            
        
@@ -321,17 +324,29 @@ web technologies to provide the best value to meet your needs.
           </div>
         </footer>
 
-<script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+
 <script>
  
-     document.addEventListener('DOMContentLoaded', function() {
+  
+      AOS.init();
+    
+        document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems);
   });
     
+   
+if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+   document.getElementById("hero-text").classList.remove("hero-text");
+   document.getElementById("hero-text").classList.add("hero-text-ie");
+   
+}
     
-  AOS.init();
+    
+ 
+    
+    
+
 
 </script>
-
 </body>

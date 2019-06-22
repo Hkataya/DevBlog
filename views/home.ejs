@@ -27,13 +27,13 @@
                       <p> <%-entry.summary %></p> 
                   </div>
              <div class="inner-image">
-          <img src="./images/<%=entry.image%>" />
+          <img src="<%=entry.image%>" />
                   </div>
               </div>
           </div>
           <span class="timeline-author"></span>
         </div>
-        <div class="meta-date"data-aos="zoom-in-up">
+        <div class="meta-date" data-aos="zoom-in-up">
           
           <span class="date"><%=moment(entry.created).format("DD") %>  </span>
           <span class="month"><%=moment(entry.created).format("MMM") %>  </span>

@@ -1,6 +1,7 @@
 
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -8,7 +9,12 @@
 body {
  
   font-family: 'lato', sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     min-height: 100vh;
     flex-direction: column;
@@ -19,6 +25,8 @@ body {
   }
 
   main {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
     flex: 1 0 auto;
   }
 
@@ -34,6 +42,9 @@ font-size: 45px;
 .nav-wrapper{
 
 
+    background-image: -webkit-gradient(linear, right top, left top, from(#7474BF), to(#348AC7));
+
+
     background-image: linear-gradient(to left, #7474BF, #348AC7);
     
 
@@ -46,6 +57,8 @@ font-size: 45px;
     text-align: center;
     width: 40%;
     border-bottom-style: solid;
+    -o-border-image: linear-gradient(to right, #348AC7,#7474BF,#EB3349, #F45C43);
+    border-image: -webkit-gradient(linear, left top, right top, from(#348AC7),color-stop(#7474BF),color-stop(#EB3349), to(#F45C43));
     border-image: linear-gradient(to right, #348AC7,#7474BF,#EB3349, #F45C43);
   border-image-slice: 1;
     margin-left: auto;
@@ -91,6 +104,7 @@ font-size: 200%;
   z-index: -1;
   margin-left: 0;
   left: 50px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#348AC7),color-stop(#7474BF),color-stop(#EB3349), to(#F45C43));
     background-image: linear-gradient(to bottom, #348AC7,#7474BF,#EB3349, #F45C43);
 }
 
@@ -125,6 +139,7 @@ font-size: 200%;
   width: auto;
   border: 1px solid #ddd;
   background-color: #fff;
+  -webkit-box-shadow: 0 5px 3px rgba(0,0,0,.2);
   box-shadow: 0 5px 3px rgba(0,0,0,.2);
   padding: 10px 25px; 
   min-height: 100px;
@@ -172,8 +187,17 @@ font-size: 200%;
 
 .inner-content{
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-pack:justify;
+    -ms-flex-pack:justify;
     justify-content:space-between;
     padding-bottom: 60px;
     
@@ -211,6 +235,7 @@ font-size: 200%;
   height: 62px;
   color: #fff;
   border-radius: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F45C43), to(#EB3349));
   background-image: linear-gradient(to bottom, #F45C43, #EB3349);
     margin-left: 0;
     left: 20px;
@@ -235,6 +260,7 @@ font-size: 200%;
 .page-footer {
 
     margin-top: 70px;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#7474BF), to(#348AC7));
     background-image: linear-gradient(to top, #7474BF, #348AC7);
     
 
@@ -263,6 +289,7 @@ font-size: 30px;
   top: 0;
   z-index: -1;
   left: 50%; 
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#348AC7),color-stop(#7474BF),color-stop(#EB3349), to(#F45C43)); 
   background-image: linear-gradient(to bottom, #348AC7,#7474BF,#EB3349, #F45C43);
         
 }
@@ -287,7 +314,7 @@ margin-right: auto;
 
 .timeline-article {
   width: 100%;
-  height: 100%;
+  
  
 }
     
@@ -300,7 +327,12 @@ margin-right: auto;
 
     .inner-content{
     text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
    
     
@@ -328,11 +360,17 @@ margin-right: auto;
 
 @media only screen and (max-width: 600px) {
     
+    
+    
+ 
+    
     .header-text{
 
         border-bottom-style: none;
     width: 90%;
     border-left-style: solid;
+    -o-border-image: linear-gradient(to bottom, #348AC7,#7474BF,#EB3349, #F45C43);
+    border-image: -webkit-gradient(linear, left top, left bottom, from(#348AC7),color-stop(#7474BF),color-stop(#EB3349), to(#F45C43));
     border-image: linear-gradient(to bottom, #348AC7,#7474BF,#EB3349, #F45C43);
   border-image-slice: 1;
 
@@ -364,6 +402,9 @@ font-size: 180%;
     
     
 .timeline-article .content-right {
+    
+
+  -webkit-box-shadow: 0 4px 3px rgba(0,0,0,.03);
     
 
   box-shadow: 0 4px 3px rgba(0,0,0,.03);

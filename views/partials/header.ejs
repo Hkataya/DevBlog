@@ -31,8 +31,13 @@
         <li><a href="/#Contact">Contact</a></li>
   </ul>
 <script>
-    AOS.init();
+    
+window.addEventListener('load', AOS.refresh)
+    
   document.addEventListener('DOMContentLoaded', function() {
+
+        AOS.init({disable:'mobile'});
+
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems);
   });
