@@ -335,12 +335,14 @@ web technologies to provide the best value to meet your needs.
     var instances = M.Sidenav.init(elems);
   });
     
+    
    
-if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+if (document.documentMode || /Edge/.test(navigator.userAgent) || /firefox/i.test(navigator.userAgent)) {
    document.getElementById("hero-text").classList.remove("hero-text");
    document.getElementById("hero-text").classList.add("hero-text-ie");
    
 }
+    
     
     
  

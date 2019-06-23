@@ -67,7 +67,7 @@ font-weight: bolder;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
    
-    background: -moz-gradient(linear,  left top, right top,  color-stop(44%, #ffffff),color-stop(57%, #348ac7),to(#7474bf));
+    background-image: -moz-gradient(linear,  left top, right top,  color-stop(44%, #ffffff),color-stop(57%, #348ac7),to(#7474bf));
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
     
@@ -85,6 +85,7 @@ text-align: center;
 position: absolute;
 top: 40%;
 left: 50%;
+-webkit-transform: translate(-50%, -50%);
 transform: translate(-50%, -50%);
 font-weight: bolder;   
 color:#f8f8f8;
@@ -585,7 +586,7 @@ font-size: 70px;
     
     
 .hero-image {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.85)), to(rgba(0, 0, 0, 0.85))), url("./images/apple-clean-containers-205316.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.68)), to(rgba(0, 0, 0, 0.68))), url("./images/apple-clean-containers-205316.jpg");
   background-image: linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)), url("./images/apple-clean-containers-205316.jpg");
   height: 100vh;
   background-position: center;
@@ -652,6 +653,7 @@ background: -o-gradient(linear,  left top, left bottom,  color-stop(44%, #ffffff
 
 top: 49%;
 left: 50%;
+-webkit-transform: translate(-50%, -50%);
 transform: translate(-50%, -50%);
 
     
@@ -783,6 +785,7 @@ transform: translate(-50%, -50%);
     
         .hero-image {
   height: 100vh;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("./images/apple-clean-containers-205316.jpg");
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./images/apple-clean-containers-205316.jpg");
   background-position:top;
   background-size:contain;
@@ -847,6 +850,7 @@ top: 39%;
     
     .hero-image {
   height: 100vh;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("./images/apple-clean-containers-205316.jpg");
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./images/apple-clean-containers-205316.jpg");
   background-position:top;
   background-size:contain;
