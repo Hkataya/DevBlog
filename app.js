@@ -7,6 +7,8 @@
 //Requiring Dependicies
 
 var express = require("express");
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var passport = require("passport");
@@ -17,6 +19,8 @@ var User = require("./models/user.js");
 var app = express();
 app.locals.moment = require("moment");
 
+app.use(cookieParser());
+app.use(session({secret: "Shh, its a secret!"}));
 
 //connecting to mongodb server
 
@@ -252,6 +256,18 @@ app.get("/admin/dashboard/article/:id", function(req, res){
     });
 });
 
+
+
+
+app.get('/secret', function(req, res){
+   if(req.session.page_views){
+      req.session.page_views++;
+      res.send("You visited this page " + req.session.page_views + " times");
+   } else {
+      req.session.page_views = 1;
+      res.send("Welcome to this page for the first time!");
+   }
+});
 
 
 
