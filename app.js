@@ -21,7 +21,7 @@ app.locals.moment = require("moment");
 
 app.use(cookieParser());
 app.use(session({secret: "Shh, its a secret!"}));
-
+app.set('trust proxy', 1)
 //connecting to mongodb server
 
 //mongoose.connect("mongodb://localhost:27017/devBlog", { useNewUrlParser: true });
