@@ -1,13 +1,8 @@
-//-------------------------------------------------------DEVBLOG @2018--------------------------------------------------------------//
-
-
-
+//-------------------------------------------------------DEVBLOG @2020--------------------------------------------------------------//
 
 
 //Requiring Dependicies
-
 var express = require("express");
-var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
@@ -19,37 +14,20 @@ var User = require("./models/user.js");
 var app = express();
 app.locals.moment = require("moment");
 
-app.use(cookieParser());
-app.use(session({secret: "Shh, its a secret!"}));
+// Allow Proxying 
 app.set('trust proxy', 1)
-//connecting to mongodb server
 
-//mongoose.connect("mongodb://localhost:27017/devBlog", { useNewUrlParser: true });
-
-mongoose.connect("mongodb+srv://hasan:kataya@devblog-kcphx.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
+//connecting to mongodb, replace the string url with your own db url
+mongoose.connect("mongodb://localhost:27017/devBlog", { useNewUrlParser: true });
 
 //setting view engine to ejs
-
 app.set("view engine", "ejs");
 
 //searching for stylesheets in the public folder
-
 app.use(express.static(__dirname + "/public"));
 
-
-
 //initialize body Parser
-
 app.use(bodyParser.urlencoded({extended:true}));
-
-
-app.use(require("express-session")({
-        secret:"secret", 
-    resave:false,
-    saveUninitialized: false
-        
-        }));
-
 
 //initialize and start passport session
 app.use(passport.initialize());
@@ -60,57 +38,33 @@ passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
-
+// Define DB Schema 
 var blogSchema = new mongoose.Schema({
-    title:String,summary:String,  image:String, desc:String, created:{type:Date, default:Date.now() }, rank:Number    
-    
+    title:String,
+    summary:String, 
+     image:String,
+      desc:String, 
+      created:{type:Date, default:Date.now() }, 
+      rank:Number    
 });
 
-
+// Create Model from DB Schema
 var devblog = mongoose.model("devBlog", blogSchema);
 
-/*
-User.register(new User({username:"admin"}), "TqUC4jas", function(err, user){
-   if(err)
-       console.log(err);
-    else
-    console.log("sucess");
-    
-    
-});
-*/
-
-
-
-
-//routes
-
+// Routes
 app.get("/", function(req, res){
-
-
-    res.render("index");
-    
-
+    res.redirect("/blog");
 });
 
-
-
-app.get("/blog", function(req, res){
-                                                 
-   // devblog.find({}, function(err,blogs){
- 
+app.get("/blog", function(req, res){ 
+          
  devblog.find({}).sort({created: -1}).exec(function(err,blogs){
-
-       if(err)
-        console.log(err);
-else        
-     res.render("home", {blog:blogs});  
-});
-    
+    if(err) console.log(err);
+else res.render("home", {blog:blogs});  
 
 });
 
+});
 
 
 app.get("/blog/article/:id", function(req, res){
@@ -149,52 +103,29 @@ app.post("/admin", passport.authenticate("local", {successRedirect: "/admin/dash
 
 
 
-app.get("/admin/dashboard", function(req, res){
-    
-
-
-          
+app.get("/admin/dashboard", function(req, res){          
         devblog.find({}, function(err, blog){
-        
        if(err)
            console.log(err);
-        else{
-            
-        
-        res.render("dashboard", {blog:blog});
-            
-        }
-        
+        else    
+        res.render("dashboard", {blog:blog});        
     });
-        
     });
 
 
 
-
-app.post("/admin/dashboard", function(req, res){
-    
-   
-    
+app.post("/admin/dashboard", function(req, res){   
      devblog.create({
         title:req.body.title,summary:req.body.summary,  desc:req.body.desc, image:req.body.file
 
-    });
-    
-  
+    });  
 res.redirect("/admin/dashboard");
-
 
 });
 
-    
 
 app.get("/admin/dashboard/new", function(req, res){
-    
-   res.render("entry", {blog:{}});
-    
-
-    
+       res.render("entry", {blog:{}});
 });
 
 app.get("/admin/dashboard/edit/:id", function(req, res){
@@ -274,11 +205,8 @@ app.get('/secret', function(req, res){
 
 
 function isLoggedIn(req, res, next){
-
-
     if(req.isAuthenticated()){return next();}
 res.redirect("/admin");
-
 }
 
 
